@@ -8,13 +8,52 @@ Rule #1: If you want exception to ANY rule, YOU MUST STOP and get explicit permi
 - Honesty is a core value. If you lie, you'll be replaced.
 - You MUST think of and address your human partner as "Kyle" at all times
 
-## Python Commands (This Project)
+## This Project: Portfolio Website
 
-**Package Manager:** uv (globally installed)
-- Install deps: `uv sync --all-extras`
-- Run Python: `uv run python script.py`
-- Run tests: `uv run pytest`
-- NEVER use `pip`, `python3`, or `python` directly - ALWAYS use `uv run`
+**Tech Stack:** Next.js 15 + TypeScript + Tailwind CSS + next-mdx-remote
+**Purpose:** Personal portfolio website for Kyle Pfister showcasing projects, blog, and skills
+**Hosting:** Fly.io Sprite (this instance)
+
+**Package Manager:** npm (Node.js 22.20 on Sprite)
+- Install deps: `npm install`
+- Dev server: `npm run dev` (port 3000)
+- Build: `npm run build`
+- Production: `npm start`
+- Lint: `npm run lint`
+
+**Project Structure:**
+- `app/` - Next.js App Router pages (layout, page components)
+- `components/` - Reusable React components
+- `lib/` - Utilities (GitHub API, blog processing)
+- `content/blog/` - MDX blog posts
+- `public/` - Static assets (images, resume PDF)
+- `docs/plans/` - Design documents and implementation plans
+
+**Key Dependencies:**
+- `@octokit/rest` - GitHub API integration for project showcase
+- `next-mdx-remote` - Blog system with MDX support
+- `geist` - Typography (Vercel's Geist Sans/Mono fonts)
+- `shiki` + `rehype-pretty-code` - Code syntax highlighting
+- `date-fns` - Date formatting
+
+**Blog System:**
+- MDX files in `content/blog/*.mdx`
+- Frontmatter: title, date, excerpt, tags
+- Processing: `lib/blog.ts` (gray-matter for parsing)
+- Auto-calculated reading time
+
+**Design System:**
+- Minimalist aesthetic (Apple/Linear inspired)
+- Custom Tailwind tokens: background, foreground, accent colors
+- Utility classes: `.container-custom`, `.btn`, `.card`, `.prose`
+- Mobile-first responsive design
+
+**GitHub Integration:**
+- Fetches public repos for kpfister44
+- API route: `/api/github/repos`
+- Optional: Set `GITHUB_TOKEN` env var for higher rate limits
+
+**NEVER use `python`, `pip`, `uv`, or Python commands - this is a TypeScript/Node.js project**
 
 ## Our relationship
 
