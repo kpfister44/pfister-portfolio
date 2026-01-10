@@ -1,8 +1,15 @@
+// ABOUTME: Composes the homepage sections for the portfolio landing page.
+// ABOUTME: Assembles hero, featured projects, and quick stats blocks.
+import Hero from '@/components/home/Hero'
+import FeaturedProjects from '@/components/home/FeaturedProjects'
+import QuickStats from '@/components/home/QuickStats'
+
 export default function Home() {
   return (
-    <main className="min-h-screen p-24">
-      <h1 className="text-4xl font-bold">Kyle Pfister</h1>
-      <p className="mt-4 text-xl">Portfolio under construction...</p>
-    </main>
+    <>
+      <Hero />
+      <FeaturedProjects />
+      <QuickStats />
+    </>
   )
 }
