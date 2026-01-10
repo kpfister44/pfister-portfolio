@@ -146,6 +146,11 @@ When asked to do something, just do it - including obvious follow-up actions nee
 - Make sure to update relevant documentation (markdown files) after making changes that differ from the documentation. You should also update documentation if a new feature is added. Ask Kyle if your unsure whether or not the change warrents a documentation update.
 - The number one purpose of documentation is to give future claude code sessions the needed context to understand what they are working on. Future claude code sessions have no context of the project and will read the relevant documentation to get context on the scope of the project they are working on. Your documentation should be written with this in mind.
 
+## Sprite Access
+- Public URL: `https://pfister-portfolio-blmwi.sprites.app`
+- Proxy defaults to port 8080; run the site on 0.0.0.0:8080 for external access (e.g., `npm run dev -- --hostname 0.0.0.0 --port 8080`).
+- URL auth is set to public via the Sprites API (Update Sprite: `PUT /v1/sprites/{name}` with `{"url_settings":{"auth":"public"}}`).
+
 
 ## Issue tracking
 
