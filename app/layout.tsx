@@ -10,7 +10,7 @@ import Footer from '@/components/layout/Footer'
 export const metadata: Metadata = {
   title: 'Kyle Pfister | Full-Stack Developer',
   description: 'Portfolio website showcasing full-stack development and AI integration projects',
-  authors: [{ name: 'Kyle Pfister', email: 'kpfister44@gmail.com' }],
+  authors: [{ name: 'Kyle Pfister' }],
 }
 
 export default function RootLayout({
