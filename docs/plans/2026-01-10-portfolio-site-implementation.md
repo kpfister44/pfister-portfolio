@@ -899,7 +899,7 @@ export async function getPublicRepos(username: string): Promise<Repository[]> {
   try {
     const { data } = await octokit.repos.listForUser({
       username,
-      type: 'public',
+      type: 'owner',
       sort: 'pushed',
       per_page: 100,
     })
@@ -908,9 +908,9 @@ export async function getPublicRepos(username: string): Promise<Repository[]> {
       name: repo.name,
       description: repo.description,
       url: repo.html_url,
-      homepage: repo.homepage,
-      stargazerCount: repo.stargazers_count,
-      language: repo.language,
+      homepage: repo.homepage ?? null,
+      stargazerCount: repo.stargazers_count ?? 0,
+      language: repo.language ?? null,
       pushedAt: repo.pushed_at || '',
       topics: repo.topics || [],
     }))
