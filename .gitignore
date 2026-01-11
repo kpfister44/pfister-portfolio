@@ -29,6 +29,7 @@ yarn-error.log*
 # Local env files
 .env
 .env*.local
+!.env.local.example
 .env.development.local
 .env.test.local
 .env.production.local
@@ -61,3 +62,5 @@ Thumbs.db
 
 # Blog content (keep structure, ignore generated)
 # content/blog/*.json
+# Local env
+.env.local
