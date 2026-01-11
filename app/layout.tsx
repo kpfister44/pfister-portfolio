@@ -25,6 +25,18 @@ export const metadata: Metadata = {
   title: 'Kyle Pfister | Full-Stack Developer',
   description: 'Portfolio website showcasing full-stack development and AI integration projects',
   authors: [{ name: 'Kyle Pfister' }],
+  openGraph: {
+    title: 'Kyle Pfister | Full-Stack Developer',
+    description: 'Portfolio website showcasing full-stack development and AI integration projects',
+    url: 'https://pfister-portfolio-blmwi.sprites.app',
+    siteName: 'Kyle Pfister Portfolio',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Kyle Pfister | Full-Stack Developer',
+    description: 'Portfolio website showcasing full-stack development and AI integration projects',
+  },
 }
 
 export default function RootLayout({
