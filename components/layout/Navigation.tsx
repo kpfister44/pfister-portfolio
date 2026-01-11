@@ -18,27 +18,35 @@ export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
+    <nav className="sticky top-0 z-50 bg-bg-overlay backdrop-blur-sm border-b border-border-subtle">
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="font-bold text-xl">
+          <Link href="/" className="font-serif font-semibold text-lg tracking-tight">
             KP
           </Link>
 
-          <div className="hidden md:flex gap-8">
+          <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 href={item.path}
-                className={`text-sm font-medium transition-colors ${
+                className={`text-sm font-medium uppercase tracking-wider transition-colors duration-base relative ${
                   pathname === item.path
-                    ? 'text-foreground'
-                    : 'text-foreground-muted hover:text-foreground'
+                    ? 'text-text-primary after:absolute after:bottom-[-4px] after:left-0 after:right-0 after:h-[2px] after:bg-accent-primary'
+                    : 'text-text-secondary hover:text-text-primary'
                 }`}
+                style={{ fontSize: '0.9rem', letterSpacing: '0.05em' }}
               >
                 {item.name}
               </Link>
             ))}
+            <Link
+              href="mailto:kpfister44@gmail.com"
+              className="text-sm font-medium uppercase tracking-wider text-text-secondary hover:text-accent-primary transition-colors duration-base"
+              style={{ fontSize: '0.9rem', letterSpacing: '0.05em' }}
+            >
+              Contact
+            </Link>
           </div>
 
           <button
@@ -72,21 +80,28 @@ export default function Navigation() {
         </div>
 
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border">
+          <div className="md:hidden py-4 border-t border-border-subtle">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 href={item.path}
-                className={`block py-2 text-sm font-medium ${
+                className={`block py-3 text-base font-medium ${
                   pathname === item.path
-                    ? 'text-foreground'
-                    : 'text-foreground-muted'
+                    ? 'text-text-primary'
+                    : 'text-text-secondary'
                 }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
               </Link>
             ))}
+            <Link
+              href="mailto:kpfister44@gmail.com"
+              className="block py-3 text-base font-medium text-text-secondary"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Contact
+            </Link>
           </div>
         )}
       </div>

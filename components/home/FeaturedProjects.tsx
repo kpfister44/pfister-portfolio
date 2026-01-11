@@ -34,38 +34,45 @@ const featuredProjects = [
 
 export default function FeaturedProjects() {
   return (
-    <section className="container-custom py-20 bg-background-alt">
-      <h2 className="mb-12">Featured Projects</h2>
-      <div className="grid md:grid-cols-2 gap-6">
-        {featuredProjects.map((project) => (
-          <Link
-            key={project.name}
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="card group"
-          >
-            <h3 className="text-xl mb-2 group-hover:text-accent transition-colors">
-              {project.name}
-            </h3>
-            <p className="text-foreground-muted mb-4">{project.description}</p>
-            <div className="flex flex-wrap gap-2">
-              {project.tech.map((tech) => (
-                <span
-                  key={tech}
-                  className="text-xs px-3 py-1 bg-background border border-border rounded-full"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
+    <section className="py-20 bg-bg-subtle">
+      <div className="container-custom">
+        <h2 className="mb-12 font-serif font-semibold text-4xl tracking-tighter text-text-primary">
+          Featured Projects
+        </h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          {featuredProjects.map((project) => (
+            <Link
+              key={project.name}
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="card group"
+            >
+              <h3 className="font-serif text-xl mb-3 text-text-primary group-hover:text-accent-primary transition-colors duration-base">
+                {project.name}
+              </h3>
+              <p className="text-text-secondary text-sm mb-4 leading-relaxed">
+                {project.description}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {project.tech.map((tech) => (
+                  <span
+                    key={tech}
+                    className="text-xs px-3 py-1 bg-bg-base border border-border-subtle rounded-full uppercase tracking-wider font-medium"
+                    style={{ fontSize: '0.75rem', letterSpacing: '0.05em' }}
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </Link>
+          ))}
+        </div>
+        <div className="mt-12 text-center">
+          <Link href="/projects" className="btn btn-secondary">
+            View All Projects
           </Link>
-        ))}
-      </div>
-      <div className="mt-12 text-center">
-        <Link href="/projects" className="btn btn-secondary">
-          View All Projects
-        </Link>
+        </div>
       </div>
     </section>
   )

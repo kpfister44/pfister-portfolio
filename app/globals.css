@@ -8,65 +8,136 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-bg-base text-text-primary antialiased;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.011em;
+  }
+
+  /* Subtle grain texture overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.03;
+    background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noise)"/%3E%3C/svg%3E');
+    pointer-events: none;
+    z-index: 1000;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold tracking-tight;
+    @apply font-serif font-semibold;
+    letter-spacing: -0.03em;
   }
 
   h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl;
+    @apply text-5xl;
   }
 
   h2 {
-    @apply text-3xl md:text-4xl;
+    @apply text-3xl;
   }
 
   h3 {
-    @apply text-2xl md:text-3xl;
+    @apply text-2xl;
   }
 
   a {
-    @apply transition-colors hover:text-accent;
+    @apply transition-colors duration-base;
   }
 }
 
 @layer components {
   .container-custom {
-    @apply max-w-5xl mx-auto px-6 md:px-8;
+    @apply mx-auto px-6;
+    max-width: 1140px;
   }
 
   .btn {
-    @apply px-6 py-3 rounded-md font-medium transition-all;
+    @apply px-6 py-3 rounded-md font-medium transition-all duration-base;
+    font-size: 0.9rem;
+    letter-spacing: 0.01em;
   }
 
   .btn-primary {
-    @apply bg-foreground text-background hover:bg-foreground/90;
+    @apply bg-accent-primary text-text-inverse;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-primary:hover {
+    @apply bg-accent-hover;
+    transform: translateY(-1px);
   }
 
   .btn-secondary {
-    @apply border border-border hover:bg-background-alt;
+    @apply bg-transparent text-text-primary border border-border-medium;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-secondary:hover {
+    @apply border-accent-primary bg-accent-subtle;
   }
 
   .card {
-    @apply border border-border rounded-lg p-6 transition-all hover:border-foreground/20;
+    @apply bg-bg-elevated border border-border-subtle rounded-lg p-6;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.02);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card:hover {
+    @apply border-border-medium;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.06), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+  }
+
+  .link-underline {
+    @apply relative no-underline;
+    color: var(--text-primary);
+  }
+
+  .link-underline::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: theme('colors.accent.primary');
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .link-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
   }
 
   .prose {
-    @apply text-foreground;
+    @apply text-text-primary;
+    max-width: 65ch;
+    font-size: 1.0625rem;
+    line-height: 1.75;
   }
 
   .prose h2 {
-    @apply text-2xl font-bold mt-8 mb-4;
+    @apply font-serif text-2xl mt-8 mb-4;
   }
 
   .prose h3 {
-    @apply text-xl font-bold mt-6 mb-3;
+    @apply font-serif text-xl mt-6 mb-3;
   }
 
   .prose p {
-    @apply mb-4 leading-relaxed;
+    @apply mb-4;
   }
 
   .prose ul, .prose ol {
@@ -78,14 +149,17 @@
   }
 
   .prose code {
-    @apply bg-background-alt px-1 py-0.5 rounded text-sm font-mono;
+    @apply bg-bg-subtle px-1 py-0.5 rounded text-sm font-mono;
   }
 
   .prose pre {
-    @apply bg-[#1E1E1E] p-4 rounded-lg overflow-x-auto mb-4;
+    @apply bg-dark-bg p-6 rounded-md overflow-x-auto mb-4 border border-dark-border;
   }
 
   .prose pre code {
-    @apply bg-transparent p-0;
+    @apply bg-transparent p-0 text-dark-text;
+    font-size: 0.875rem;
+    line-height: 1.7;
+    font-feature-settings: 'liga' 1, 'calt' 1;
   }
 }
