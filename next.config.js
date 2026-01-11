@@ -8,6 +8,8 @@ const nextConfig = {
       },
     ],
   },
+  // Output standalone for Sprite deployment
+  output: 'standalone',
 }
 
 module.exports = nextConfig
