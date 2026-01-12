@@ -10,10 +10,10 @@ const config: Config = {
     extend: {
       colors: {
         bg: {
-          base: '#FAFAF9',
-          elevated: '#FFFFFF',
-          subtle: '#F5F5F4',
-          overlay: 'rgba(255, 255, 255, 0.95)',
+          base: '#F5F5F4',
+          elevated: '#FAFAF9',
+          subtle: '#F0F0EF',
+          overlay: 'rgba(250, 250, 249, 0.98)',
         },
         text: {
           primary: '#0A0A0A',
@@ -22,15 +22,15 @@ const config: Config = {
           inverse: '#FAFAF9',
         },
         accent: {
-          primary: '#1E40AF',
-          hover: '#1E3A8A',
+          primary: '#1E3A8A',
+          hover: '#1E40AF',
           subtle: '#DBEAFE',
           border: '#93C5FD',
         },
         border: {
-          subtle: '#E7E5E4',
-          medium: '#D6D3D1',
-          strong: '#A8A29E',
+          subtle: '#FCFCFB',
+          medium: '#F8F8F7',
+          strong: '#F5F5F4',
         },
         dark: {
           bg: '#1C1917',
@@ -40,7 +40,7 @@ const config: Config = {
         },
         // Semantic colors
         success: '#15803D',
-        error: '#B91C1C',
+        error: '#DC2626',
         warning: '#CA8A04',
       },
       fontFamily: {
@@ -54,32 +54,33 @@ const config: Config = {
           'sans-serif',
         ],
         serif: ['var(--font-fraunces)', 'Georgia', 'serif'],
-        mono: ['var(--font-jetbrains)', '"SF Mono"', 'Monaco', 'monospace'],
+        mono: ['"SF Mono"', 'Monaco', 'Consolas', '"Courier New"', 'monospace'],
       },
       fontSize: {
-        xs: ['0.64rem', { lineHeight: '1.5' }],
-        sm: ['0.8rem', { lineHeight: '1.5' }],
+        xs: ['0.75rem', { lineHeight: '1.5' }],
+        sm: ['0.875rem', { lineHeight: '1.5' }],
         base: ['1rem', { lineHeight: '1.65' }],
         lg: ['1.25rem', { lineHeight: '1.6' }],
-        xl: ['1.563rem', { lineHeight: '1.5' }],
-        '2xl': ['1.953rem', { lineHeight: '1.4' }],
-        '3xl': ['2.441rem', { lineHeight: '1.3' }],
-        '4xl': ['3.052rem', { lineHeight: '1.2' }],
-        '5xl': ['3.815rem', { lineHeight: '1.1' }],
-        '6xl': ['4.768rem', { lineHeight: '1' }],
+        xl: ['1.5rem', { lineHeight: '1.5' }],
+        '2xl': ['2rem', { lineHeight: '1.4' }],
+        '3xl': ['2.5rem', { lineHeight: '1.3' }],
+        '4xl': ['3rem', { lineHeight: '1.2' }],
+        '5xl': ['4rem', { lineHeight: '1.1' }],
+        '6xl': ['5rem', { lineHeight: '1' }],
       },
       spacing: {
-        '1': '0.25rem',
-        '2': '0.5rem',
-        '3': '0.75rem',
-        '4': '1rem',
-        '5': '1.5rem',
-        '6': '2rem',
-        '8': '3rem',
-        '10': '4rem',
-        '12': '6rem',
-        '16': '8rem',
-        '20': '12rem',
+        '1': '0.25rem',   // 4px
+        '2': '0.5rem',    // 8px
+        '3': '0.75rem',   // 12px
+        '4': '1rem',      // 16px ← 2 × 8
+        '5': '1.5rem',    // 24px ← 3 × 8
+        '6': '2rem',      // 32px ← 4 × 8
+        '8': '2.5rem',    // 40px ← 5 × 8
+        '10': '3rem',     // 48px ← 6 × 8
+        '12': '3.5rem',   // 56px ← 7 × 8
+        '14': '4rem',     // 64px ← 8 × 8 (typical section padding)
+        '16': '5rem',     // 80px ← 10 × 8
+        '20': '6rem',     // 96px ← 12 × 8
       },
       letterSpacing: {
         tighter: '-0.03em',
@@ -99,10 +100,10 @@ const config: Config = {
         full: '9999px',
       },
       boxShadow: {
-        sm: '0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 3px 0 rgba(0, 0, 0, 0.02)',
-        md: '0 2px 4px -1px rgba(0, 0, 0, 0.04), 0 4px 6px -1px rgba(0, 0, 0, 0.06)',
-        lg: '0 10px 15px -3px rgba(0, 0, 0, 0.06), 0 4px 6px -2px rgba(0, 0, 0, 0.04)',
-        xl: '0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.03)',
+        sm: '0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 2px 0 rgba(0, 0, 0, 0.02)',
+        md: '0 2px 4px -1px rgba(0, 0, 0, 0.04), 0 4px 8px -1px rgba(0, 0, 0, 0.06)',
+        lg: '0 10px 20px -3px rgba(0, 0, 0, 0.06), 0 4px 8px -2px rgba(0, 0, 0, 0.04)',
+        xl: '0 20px 40px -5px rgba(0, 0, 0, 0.08), 0 10px 20px -5px rgba(0, 0, 0, 0.03)',
       },
       transitionDuration: {
         fast: '150ms',
