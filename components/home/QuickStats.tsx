@@ -2,9 +2,9 @@
 // ABOUTME: Uses a simple grid layout for key metrics.
 export default function QuickStats() {
   const stats = [
-    { label: 'Public Repositories', value: '7' },
-    { label: 'Tech Stack', value: '10+' },
-    { label: 'Years Coding', value: '5+' },
+    { label: 'Coffee Consumed', value: '∞' },
+    { label: 'Claude Rate Limits', value: 'Hit Weekly' },
+    { label: 'Side Projects', value: 'In Progress' },
   ]
 
   return (

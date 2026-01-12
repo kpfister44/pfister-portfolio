@@ -16,7 +16,7 @@ export default function Hero() {
           className="text-lg md:text-xl text-text-secondary font-medium mb-6 animate-fade-up"
           style={{ animationDelay: '100ms' }}
         >
-          Part-time Full-Stack Software Engineer and Full-time Computer Science Teacher
+          Part-time Software Developer and Full-time Computer Science Teacher
         </p>
         <p
           className="text-base md:text-lg text-text-tertiary italic mb-8 max-w-2xl animate-fade-up"
