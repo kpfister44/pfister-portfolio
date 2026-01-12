@@ -40,13 +40,6 @@ export default function Navigation() {
                 {item.name}
               </Link>
             ))}
-            <Link
-              href="mailto:kpfister44@gmail.com"
-              className="text-sm font-medium uppercase tracking-wider text-text-secondary hover:text-accent-primary transition-colors duration-base"
-              style={{ fontSize: '0.9rem', letterSpacing: '0.05em' }}
-            >
-              Contact
-            </Link>
           </div>
 
           <button
@@ -95,13 +88,6 @@ export default function Navigation() {
                 {item.name}
               </Link>
             ))}
-            <Link
-              href="mailto:kpfister44@gmail.com"
-              className="block py-3 text-base font-medium text-text-secondary"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Contact
-            </Link>
           </div>
         )}
       </div>

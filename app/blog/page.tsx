@@ -16,7 +16,7 @@ export default function BlogPage() {
     <div className="container-custom py-20">
       <h1 className="mb-4">Blog</h1>
       <p className="text-lg text-text-secondary mb-12 max-w-2xl">
-        Thoughts on web development, AI integration, and lessons learned building software.
+        Notes from the intersection of teaching, code, and whatever I&apos;m working on this week.
       </p>
 
       <div className="grid gap-6 max-w-3xl">
