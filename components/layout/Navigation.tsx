@@ -18,7 +18,7 @@ export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <nav className="sticky top-0 z-50 bg-bg-overlay backdrop-blur-sm border-b border-border-subtle">
+    <nav className="sticky top-0 z-50 bg-bg-base border-b border-border-subtle">
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="font-serif font-semibold text-lg tracking-tight">
@@ -50,7 +50,7 @@ export default function Navigation() {
           </div>
 
           <button
-            className="md:hidden"
+            className="md:hidden text-text-secondary"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >

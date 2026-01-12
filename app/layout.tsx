@@ -2,7 +2,6 @@
 // ABOUTME: Wraps pages with navigation and footer components.
 import type { Metadata } from 'next'
 import { Fraunces } from 'next/font/google'
-import { JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import Navigation from '@/components/layout/Navigation'
 import Footer from '@/components/layout/Footer'
@@ -11,13 +10,6 @@ const fraunces = Fraunces({
   subsets: ['latin'],
   variable: '--font-fraunces',
   weight: ['300', '400', '600'],
-  display: 'swap',
-})
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-jetbrains',
-  weight: ['400', '500'],
   display: 'swap',
 })
 
@@ -45,7 +37,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={fraunces.variable}>
       <body>
         <Navigation />
         <main className="min-h-screen">{children}</main>

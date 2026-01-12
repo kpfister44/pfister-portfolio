@@ -10,11 +10,24 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   const skills = {
-    Frontend: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'SvelteKit'],
-    Backend: ['Python', 'Node.js', 'FastAPI'],
+    Frontend: [
+      'React',
+      'Next.js',
+      'TypeScript',
+      'Tailwind CSS',
+      'SvelteKit',
+      'Svelte',
+      'Jest',
+      'Vite',
+      'Rollup',
+      'Playwright',
+      'Vitest',
+      'Tailwind UI / component design',
+    ],
+    Backend: ['Python', 'Node.js', 'FastAPI', 'Java', 'Express.js', 'REST API design', 'SQL (PostgreSQL/MySQL)'],
     Mobile: ['Swift', 'iOS Development'],
-    'AI/ML': ['Claude API', 'LLM Integration', 'AI-powered Tools'],
-    Tools: ['Git', 'Sprites', 'Claude Code', 'Docker'],
+    'AI/ML': ['Claude API', 'LLM Integration', 'AI-powered Tools', 'Claude Code', 'Codex'],
+    Tools: ['Git', 'Sprites', 'Claude Code', 'Docker', 'CI/CD (GitHub Actions)'],
   }
 
   return (
@@ -24,23 +37,20 @@ export default function AboutPage() {
       <div className="max-w-3xl">
         <section className="mb-12">
           <h2 className="mb-4">Background</h2>
-          <p className="text-lg text-foreground-muted mb-4">
-            I&apos;m a full-stack developer currently working at Argonne National Laboratory in Chicago, IL.
-            My passion lies in building clean, efficient web applications and exploring the intersection
-            of traditional software development with modern AI tools.
-          </p>
           <p className="text-lg text-foreground-muted">
-            Developer who believes in coffee and version control. Still trying to figure out which one&apos;s
-            more essential.
+            I&apos;m a full-time computer science teacher and part-time software developer. I currently
+            teach Intro to Programming and AP Computer Science A at a high school in the suburbs of
+            Chicago, and work part-time at Argonne National Laboratory as a software developer. My
+            passion lies in using AI driven development to build clean and useful software!
           </p>
         </section>
 
         <section className="mb-12">
           <h2 className="mb-4">Work Experience</h2>
           <div className="card">
-            <h3 className="text-xl mb-2">Developer</h3>
+            <h3 className="text-xl mb-2">Full-Stack Software Engineer</h3>
             <p className="text-foreground-muted mb-2">Argonne National Laboratory</p>
-            <p className="text-sm text-foreground-muted">Chicago, IL</p>
+            <p className="text-sm text-foreground-muted">Lemont, IL</p>
           </div>
         </section>
 
